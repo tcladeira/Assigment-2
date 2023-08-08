@@ -11,20 +11,23 @@ using namespace std;
 
 //Creating the class here
 class GeometricSequence{
-private:
+public:
     int a;
     int r;
     int n;
-    int size;
+    int size = 1;
     int* geoseq = new int [size];
 
-public:
+// public:
 
 GeometricSequence (int ac, int rc, int nc){
+    a = ac;
+    r = rc;
+    n = nc;
+    size = nc;
     for (int i = 0; i < n; ++i){
-        a = ac;
-        r = rc;
-        n = nc;
+       geoseq[i] = ac * pow(rc,nc);
+
     }
 }
 
@@ -33,6 +36,10 @@ GeometricSequence (int ac, int rc, int nc){
 
 
 int main() {
+
+    GeometricSequence seq (2, 2, 2);
+
+    cout << seq.geoseq[0];
 
 
     return 0;
