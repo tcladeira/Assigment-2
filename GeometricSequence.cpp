@@ -15,8 +15,8 @@ public:
     int a;
     int r;
     int n;
-    int size = 1;
-    int* geoseq = new int [size];
+    int size;
+    int* geoseq;
 
 // public:
 
@@ -25,6 +25,7 @@ GeometricSequence (int ac, int rc, int nc){
     r = rc;
     n = nc;
     size = nc;
+    int* geoseq = new int [size];
     for (int i = 0; i < n; ++i){
        geoseq[i] = ac * pow(rc,nc);
 
