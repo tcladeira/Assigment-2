@@ -38,6 +38,7 @@ void getCharacteristic(int& aob, int& rob, int& nob){
     nob = n;
 }
 
+
 };
 
 
