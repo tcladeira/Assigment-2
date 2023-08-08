@@ -5,7 +5,7 @@
 //First thing is to include the libraries and do not forget the headline.
 #include <iostream>
 #include <cmath>
-#include "GeometricSequence.h"
+// #include "GeometricSequence.h"
 using namespace std;
 
 
@@ -25,7 +25,7 @@ GeometricSequence (int ac, int rc, int nc){
     r = rc;
     n = nc;
     size = nc;
-    int* geoseq = new int [size];
+    geoseq = new int [size];
     for (int i = 0; i < n; ++i){
        geoseq[i] = ac * pow(rc,nc);
 
