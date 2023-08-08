@@ -11,14 +11,14 @@ using namespace std;
 
 //Creating the class here
 class GeometricSequence{
-public:
+private:
     int a;
     int r;
     int n;
     int size;
     int* geoseq;
 
-// public:
+public:
 
 GeometricSequence (int ac, int rc, int nc){
     a = ac;
@@ -32,15 +32,26 @@ GeometricSequence (int ac, int rc, int nc){
     }
 }
 
+void getCharacteristic(int& aob, int& rob, int& nob){
+    aob = a;
+    rob = r;
+    nob = n;
+}
+
 };
 
 
 
 int main() {
+     
+     int a;
+     int b;
+     int c;
 
-    GeometricSequence seq (2, 2, 2);
+    GeometricSequence seq (21, 2, 2);
+    seq.getCharacteristic(a, b, c);
+    cout << " Valeu one is:" << a;
 
-    cout << seq.geoseq[0];
 
 
     return 0;
