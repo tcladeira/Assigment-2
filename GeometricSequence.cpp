@@ -79,7 +79,10 @@ void read (){
     cin >> n;
 }
 void write(){
-
+    cout << "The elements of the Sequence are: " << endl;
+    for (int i = 0; i < size; ++i){
+        cout << geoseq[i] << ", " << endl;
+    }
 }
 
 };
@@ -95,9 +98,10 @@ int main() {
      int* userSeq = new int [index];
 
     GeometricSequence seq (21, 2, 4);
-    seq.add(seq, 2);
+    seq.mult(seq, 2);
     seq.getCharacteristic(a, b, c, userSeq);
     cout << "Value of index 0 is: " << userSeq[1];
+    seq.write();
     
 
 
