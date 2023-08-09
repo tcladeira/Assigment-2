@@ -58,6 +58,29 @@ void add(GeometricSequence& userObject, int userValue){
 
     }
 }
+void sub(GeometricSequence& userObject, int userValue){
+    for (int i = 0; i < size; ++i){
+        userObject.geoseq[i] = userObject.geoseq[i] - userValue;
+
+    }
+}
+void mult(GeometricSequence& userObject, int userValue){
+    for (int i = 0; i < size; ++i){
+        userObject.geoseq[i] = userObject.geoseq[i] * userValue;
+
+    }
+}
+void read (){
+    cout << "Inform the scale factor of the Sequence: " << endl;
+    cin >> a;
+    cout << "Inform the common ration of the Sequence: " << endl;
+    cin >> r;
+    cout << "Inform the number of elements in the Sequence: " << endl;
+    cin >> n;
+}
+void write(){
+
+}
 
 };
 
