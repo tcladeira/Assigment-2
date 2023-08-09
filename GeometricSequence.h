@@ -16,7 +16,6 @@ GeometricSequence();
 GeometricSequence (int ac, int rc, int nc);
 GeometricSequence (const GeometricSequence& original);
 // ~GeometricSequence();
-void getCharacteristic(int& aob, int& rob, int& nob, int* userSeq);
 void getCharacteristic(int& aob, int& rob, int& nob);
 int& element(int index);
 int& element(int index) const;

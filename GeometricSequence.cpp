@@ -41,13 +41,10 @@ GeometricSequence:: GeometricSequence (const GeometricSequence& original){
 //     delete[] geoseq;
 // }
 
-void GeometricSequence::getCharacteristic(int& aob, int& rob, int& nob, int* userSeq){
+void GeometricSequence::getCharacteristic(int& aob, int& rob, int& nob){
     aob = a;
     rob = r;
     nob = n;
-    for (int i = 0; i < size; ++i){
-    userSeq[i] = geoseq[i];
-    }
 }
 
 int& GeometricSequence::element(int index){

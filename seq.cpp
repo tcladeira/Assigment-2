@@ -28,7 +28,7 @@ int main(){
     C.write();
 
 //Set D to be a sequence equal to A, but with -r.
-    A.getCharacteristic(aob, rob, nob, sequenceArr);
+    A.getCharacteristic(aob, rob, nob);
     GeometricSequence D(aob, -rob, nob);
     D.write();
 
