@@ -20,6 +20,9 @@ GeometricSequence::GeometricSequence (int ac, int rc, int nc){
 
     }
 }
+GeometricSequence::~GeometricSequence(){
+    delete[] geoseq;
+}
 
 void GeometricSequence::getCharacteristic(int& aob, int& rob, int& nob, int* userSeq){
     aob = a;

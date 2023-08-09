@@ -11,6 +11,7 @@ private:
 
 public:
 GeometricSequence (int ac, int rc, int nc);
+~GeometricSequence();
 void getCharacteristic(int& aob, int& rob, int& nob, int* userSeq);
 void getCharacteristic(int& aob, int& rob, int& nob);
 int& element(int index);
