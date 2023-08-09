@@ -8,6 +8,8 @@
 #include "GeometricSequence.h"
 using namespace std;
 
+//created one standard and one with parameters.
+GeometricSequence::GeometricSequence(){}
 
 GeometricSequence::GeometricSequence (int ac, int rc, int nc){
     a = ac;
@@ -20,9 +22,10 @@ GeometricSequence::GeometricSequence (int ac, int rc, int nc){
 
     }
 }
-GeometricSequence::~GeometricSequence(){
-    delete[] geoseq;
-}
+//For some reason my destructor is giving me some trouble, so I commemet it out.
+// GeometricSequence::~GeometricSequence(){
+//     delete[] geoseq;
+// }
 
 void GeometricSequence::getCharacteristic(int& aob, int& rob, int& nob, int* userSeq){
     aob = a;
@@ -70,11 +73,15 @@ void GeometricSequence::read (){
     cin >> r;
     cout << "Inform the number of elements in the Sequence: " << endl;
     cin >> n;
+    geoseq = new int [n];
+    for (int i = 0; i < n; ++i){
+        geoseq[i] = a * pow(r,i);
+    }
 }
 
 void GeometricSequence::write(){
     cout << "The elements of the Sequence are: " << endl;
-    for (int i = 0; i < size; ++i){
+    for (int i = 0; i < n; ++i){
         cout << geoseq[i] << ", " << endl;
     }
 }

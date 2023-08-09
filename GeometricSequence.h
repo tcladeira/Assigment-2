@@ -10,8 +10,9 @@ private:
     int* geoseq;
 
 public:
+GeometricSequence();
 GeometricSequence (int ac, int rc, int nc);
-~GeometricSequence();
+// ~GeometricSequence();
 void getCharacteristic(int& aob, int& rob, int& nob, int* userSeq);
 void getCharacteristic(int& aob, int& rob, int& nob);
 int& element(int index);
