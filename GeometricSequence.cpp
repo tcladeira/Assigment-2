@@ -38,6 +38,11 @@ void getCharacteristic(int& aob, int& rob, int& nob){
     nob = n;
 }
 
+int& element(int index){
+    assert(index<size && index>=0);
+    return geoseq[index];
+}
+
 
 };
 
