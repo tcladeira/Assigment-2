@@ -37,11 +37,20 @@ int main(){
     result1.add(B);
     cout << "A + B = ";
     result1.write();
-
+//Multiplying AxC and Subtracting B:
     GeometricSequence result2 = A;
-    result2.add(B);
+    result2.mult(C);
+    result2.sub(B);
+    cout << "A x C - B = ";
     result2.write();
 
+    GeometricSequence result3 = A;
+    result3.add(D);
+    result3.mult(C);
+    cout << "(A+D) x C = ";
+    result3.write();
+
+    cout << "End of Program";
 
     return 0;
 }

@@ -22,6 +22,6 @@ int& element(int index) const;
 void add(GeometricSequence& userObject);
 void sub(GeometricSequence& userObject);
 void mult(GeometricSequence& userObject);
-void read ();
+void read();
 void write();
 };
