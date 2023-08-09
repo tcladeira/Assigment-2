@@ -8,8 +8,12 @@
 #include "GeometricSequence.h"
 using namespace std;
 
-//created one standard and one with parameters.
-GeometricSequence::GeometricSequence(){}
+//created one standard Constructor and one with parameters.
+GeometricSequence::GeometricSequence(){
+    a = 1;
+    r = 1;
+    n = 1;
+}
 
 GeometricSequence::GeometricSequence (int ac, int rc, int nc){
     a = ac;
@@ -20,6 +24,16 @@ GeometricSequence::GeometricSequence (int ac, int rc, int nc){
     for (int i = 0; i < n; ++i){
        geoseq[i] = ac * pow(rc,i);
 
+    }
+}
+//created a copy constructor here
+GeometricSequence:: GeometricSequence (const GeometricSequence& original){
+    a = original.a;
+    r = original.r;
+    n = original.n;
+    geoseq = new int [n];
+    for (int i = 0; i < n; ++i){
+        geoseq[i] = original.geoseq[i];
     }
 }
 //For some reason my destructor is giving me some trouble, so I commemet it out.
@@ -44,24 +58,30 @@ int& GeometricSequence::element(int index){
 
 int& GeometricSequence::element(int index) const{
     assert(index<size && index>=0);
-    return geoseq[index];
+    int& reference = geoseq[index];
+    return reference;
 }
 
-void GeometricSequence::add(GeometricSequence& userObject, int userValue){
-    for (int i = 0; i < size; ++i){
-        userObject.geoseq[i] = userObject.geoseq[i] + userValue;
-
-    }
-}
-void GeometricSequence::sub(GeometricSequence& userObject, int userValue){
-    for (int i = 0; i < size; ++i){
-        userObject.geoseq[i] = userObject.geoseq[i] - userValue;
+void GeometricSequence::add(GeometricSequence& userObject){
+    assert(n == userObject.n);
+    for (int i = 0; i < n; ++i){
+        geoseq[i] = geoseq[i] + userObject.geoseq[i];
 
     }
 }
-void GeometricSequence::mult(GeometricSequence& userObject, int userValue){
-    for (int i = 0; i < size; ++i){
-        userObject.geoseq[i] = userObject.geoseq[i] * userValue;
+
+void GeometricSequence::sub(GeometricSequence& userObject){
+    assert(n == userObject.n);
+    for (int i = 0; i < n; ++i){
+        geoseq[i] = geoseq[i] - userObject.geoseq[i];
+
+    }
+}
+
+void GeometricSequence::mult(GeometricSequence& userObject){
+    assert(n == userObject.n);
+    for (int i = 0; i < n; ++i){
+        geoseq[i] = geoseq[i] * userObject.geoseq[i];
 
     }
 }
