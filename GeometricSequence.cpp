@@ -5,22 +5,11 @@
 //First thing is to include the libraries and do not forget the headline.
 #include <iostream>
 #include <cmath>
-// #include "GeometricSequence.h"
+#include "GeometricSequence.h"
 using namespace std;
 
 
-//Creating the class here
-class GeometricSequence{
-private:
-    int a;
-    int r;
-    int n;
-    int size;
-    int* geoseq;
-
-public:
-
-GeometricSequence (int ac, int rc, int nc){
+GeometricSequence::GeometricSequence (int ac, int rc, int nc){
     a = ac;
     r = rc;
     n = nc;
@@ -32,7 +21,7 @@ GeometricSequence (int ac, int rc, int nc){
     }
 }
 
-void getCharacteristic(int& aob, int& rob, int& nob, int* userSeq){
+void GeometricSequence::getCharacteristic(int& aob, int& rob, int& nob, int* userSeq){
     aob = a;
     rob = r;
     nob = n;
@@ -41,36 +30,37 @@ void getCharacteristic(int& aob, int& rob, int& nob, int* userSeq){
     }
 }
 
-int& element(int index){
+int& GeometricSequence::element(int index){
     assert(index<size && index>=0);
     int& reference = geoseq[index];
     return reference;
 }
 
-int& element(int index) const{
+int& GeometricSequence::element(int index) const{
     assert(index<size && index>=0);
     return geoseq[index];
 }
 
-void add(GeometricSequence& userObject, int userValue){
+void GeometricSequence::add(GeometricSequence& userObject, int userValue){
     for (int i = 0; i < size; ++i){
         userObject.geoseq[i] = userObject.geoseq[i] + userValue;
 
     }
 }
-void sub(GeometricSequence& userObject, int userValue){
+void GeometricSequence::sub(GeometricSequence& userObject, int userValue){
     for (int i = 0; i < size; ++i){
         userObject.geoseq[i] = userObject.geoseq[i] - userValue;
 
     }
 }
-void mult(GeometricSequence& userObject, int userValue){
+void GeometricSequence::mult(GeometricSequence& userObject, int userValue){
     for (int i = 0; i < size; ++i){
         userObject.geoseq[i] = userObject.geoseq[i] * userValue;
 
     }
 }
-void read (){
+
+void GeometricSequence::read (){
     cout << "Inform the scale factor of the Sequence: " << endl;
     cin >> a;
     cout << "Inform the common ration of the Sequence: " << endl;
@@ -78,33 +68,10 @@ void read (){
     cout << "Inform the number of elements in the Sequence: " << endl;
     cin >> n;
 }
-void write(){
+
+void GeometricSequence::write(){
     cout << "The elements of the Sequence are: " << endl;
     for (int i = 0; i < size; ++i){
         cout << geoseq[i] << ", " << endl;
     }
 }
-
-};
-
-
-
-int main() {
-     
-     int a;
-     int b;
-     int c;
-     int index;
-     int* userSeq = new int [index];
-
-    GeometricSequence seq (21, 2, 4);
-    seq.mult(seq, 2);
-    seq.getCharacteristic(a, b, c, userSeq);
-    cout << "Value of index 0 is: " << userSeq[1];
-    seq.write();
-    
-
-
-
-    return 0;
-} 
