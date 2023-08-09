@@ -40,9 +40,11 @@ void getCharacteristic(int& aob, int& rob, int& nob){
 
 int& element(int index){
     assert(index<size && index>=0);
-    int reference;
-    reference = geoseq[index];
-    return reference;
+    return geoseq[index];
+}
+int& element(int index) const{
+    assert(index<size && index>=0);
+    return geoseq[index];
 }
 
 
