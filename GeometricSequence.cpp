@@ -27,26 +27,37 @@ GeometricSequence (int ac, int rc, int nc){
     size = nc;
     geoseq = new int [size];
     for (int i = 0; i < n; ++i){
-       geoseq[i] = ac * pow(rc,nc);
+       geoseq[i] = ac * pow(rc,i);
 
     }
 }
 
-void getCharacteristic(int& aob, int& rob, int& nob){
+void getCharacteristic(int& aob, int& rob, int& nob, int* userSeq){
     aob = a;
     rob = r;
     nob = n;
+    for (int i = 0; i < size; ++i){
+    userSeq[i] = geoseq[i];
+    }
 }
 
 int& element(int index){
     assert(index<size && index>=0);
-    return geoseq[index];
+    int& reference = geoseq[index];
+    return reference;
 }
+
 int& element(int index) const{
     assert(index<size && index>=0);
     return geoseq[index];
 }
 
+void add(GeometricSequence& userObject, int userValue){
+    for (int i = 0; i < size; ++i){
+        userObject.geoseq[i] = userObject.geoseq[i] + userValue;
+
+    }
+}
 
 };
 
@@ -57,10 +68,14 @@ int main() {
      int a;
      int b;
      int c;
+     int index;
+     int* userSeq = new int [index];
 
-    GeometricSequence seq (21, 2, 2);
-    seq.getCharacteristic(a, b, c);
-    cout << " Valeu one is:" << a;
+    GeometricSequence seq (21, 2, 4);
+    seq.add(seq, 2);
+    seq.getCharacteristic(a, b, c, userSeq);
+    cout << "Value of index 0 is: " << userSeq[1];
+    
 
 
 
